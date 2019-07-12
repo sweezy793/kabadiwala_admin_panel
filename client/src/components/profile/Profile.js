@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import ProfileHeader from "./ProfileHeader";
-import ProfileGithub from "./ProfileGithub";
-import ProfileAbout from "./ProfileAbout";
 import Spinner from "../common/Spinner";
 import { getProfileByHandle } from "../../actions/profileActions";
 
@@ -31,18 +29,13 @@ class Profile extends Component {
         <div>
           <div className="row">
             <div className="col-md-6">
-              <Link to="/profiles" className="btn btn-dark mb-3 float-left">
-                Back to Profiles
+              <Link to="/dashboard" className="btn btn-dark mb-3 float-left">
+                Back to Dashboard
               </Link>
             </div>
             <div className="col-md-6" />
           </div>
           <ProfileHeader profile={profile} />
-          <ProfileAbout profile={profile} />
-
-          {profile.githubusername ? (
-            <ProfileGithub username={profile.githubusername} />
-          ) : null}
         </div>
       );
     }

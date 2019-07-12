@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Spinner from '../common/Spinner';
-import { getProfiles } from '../../actions/profileActions';
-import ProfileItem from './ProfileItem';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Spinner from "../common/Spinner";
+import { getProfiles } from "../../actions/profileActions";
+import ProfileItem from "./ProfileItem";
 
 class Profiles extends Component {
   componentDidMount() {
@@ -31,10 +31,7 @@ class Profiles extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center">Developer Profiles</h1>
-              <p className="lead text-center">
-                Browse and connect with developers
-              </p>
+              <h1 className="display-4 text-center">All Users</h1>
               {profileItems}
             </div>
           </div>

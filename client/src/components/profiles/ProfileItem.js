@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import isEmpty from '../../validation/isEmpty';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import isEmpty from "../../validation/isEmpty";
 
 class ProfileItem extends Component {
   render() {
@@ -16,7 +16,7 @@ class ProfileItem extends Component {
           <div className="col-lg-6 col-md-4 col-8">
             <h3>{profile.user.name}</h3>
             <p>
-              {profile.status}{' '}
+              {profile.status}{" "}
               {isEmpty(profile.company) ? null : (
                 <span>at {profile.company}</span>
               )}
@@ -31,14 +31,11 @@ class ProfileItem extends Component {
             </Link>
           </div>
           <div className="col-md-4 d-none d-md-block">
-            <h4>Skill Set</h4>
+            <h4>User Details</h4>
             <ul className="list-group">
-              {profile.skills.slice(0, 4).map((skill, index) => (
-                <li key={index} className="list-group-item">
-                  <i className="fa fa-check pr-1" />
-                  {skill}
-                </li>
-              ))}
+              <li className="list-group-item">
+                <i className="fa fa-check pr-1" />
+              </li>
             </ul>
           </div>
         </div>
