@@ -13,13 +13,7 @@ class CreateProfile extends Component {
     super(props);
     this.state = {
       handle: "",
-      company: "",
-      website: "",
-      location: "",
       status: "",
-      skills: "",
-      githubusername: "",
-      bio: "",
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -37,13 +31,8 @@ class CreateProfile extends Component {
 
     const profileData = {
       handle: this.state.handle,
-      company: this.state.company,
-      website: this.state.website,
-      location: this.state.location,
-      status: this.state.status,
-      skills: this.state.skills,
-      githubusername: this.state.githubusername,
-      bio: this.state.bio
+
+      status: this.state.status
     };
 
     this.props.createProfile(profileData, this.props.history);
@@ -55,18 +44,6 @@ class CreateProfile extends Component {
 
   render() {
     const { errors } = this.state;
-
-    const options = [
-      { label: "Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Manager", value: "Manager" },
-      { label: "Student or Learning", value: "Student or Learning" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
-      { label: "Intern", value: "Intern" },
-      { label: "Other", value: "Other" }
-    ];
 
     return (
       <div className="create-profile">
@@ -88,62 +65,12 @@ class CreateProfile extends Component {
                   error={errors.handle}
                   info="* A unique handle for your profile"
                 />
-                <SelectListGroup
+                <TextFieldGroup
                   placeholder="Status"
                   name="status"
                   value={this.state.status}
                   onChange={this.onChange}
-                  options={options}
                   error={errors.status}
-                  info="* Where are you in your career currently"
-                />
-                <TextFieldGroup
-                  placeholder="Company"
-                  name="company"
-                  value={this.state.company}
-                  onChange={this.onChange}
-                  error={errors.company}
-                  info="Your very own company or where you work at"
-                />
-                <TextFieldGroup
-                  placeholder="Website"
-                  name="website"
-                  value={this.state.website}
-                  onChange={this.onChange}
-                  error={errors.website}
-                  info="Your very own website or your company's"
-                />
-                <TextFieldGroup
-                  placeholder="Location"
-                  name="location"
-                  value={this.state.location}
-                  onChange={this.onChange}
-                  error={errors.location}
-                  info="Where are you situated"
-                />
-                <TextFieldGroup
-                  placeholder="Skills"
-                  name="skills"
-                  value={this.state.skills}
-                  onChange={this.onChange}
-                  error={errors.skills}
-                  info="* eg. C,C++, Python, JavaScript"
-                />
-                <TextFieldGroup
-                  placeholder="GitHub username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="Link your GitHub and show off your projects"
-                />
-                <TextAreaFieldGroup
-                  placeholder="Bio"
-                  name="bio"
-                  value={this.state.bio}
-                  onChange={this.onChange}
-                  error={errors.bio}
-                  info="Tell us a little bit about yourself"
                 />
                 <input
                   type="submit"
